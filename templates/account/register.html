@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Atmos Admin Panel- Bootstrap 4 Based Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo.png' %}"/>
+    <link rel="icon" href="{% static 'assets/img/logo.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'assets/vendor/pace/pace.css' %}">
+    <script src="{% static 'assets/vendor/pace/pace.min.js' %}"></script>
+    <!--vendors-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/timepicker/bootstrap-timepicker.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/fonts/jost/jost.css' %}">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/materialdesignicons/materialdesignicons.min.css' %}">
+    <!--Bootstrap + atmos Admin CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/atmos.min.css' %}">
+    <!-- Additional library for page -->
+
+</head>
+<body class="jumbo-page">
+
+<main class="admin-main  ">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-lg-4  bg-white">
+                <div class="row align-items-center m-h-100">
+                    <div class="mx-auto col-md-8">
+                        <form class="needs-validation" method='POST'>
+                            <div class="p-b-20 text-center">
+                                <p>
+                                    <img src="{% static 'assets/img/logo.svg' %}" width="80" alt="">
+
+                                </p>
+                                <p class="admin-brand-content">
+                                    atmos
+                                </p>
+                            </div>
+                            <h3 class="text-center p-b-20 fw-400">Register</h3>
+                            {% csrf_token %}
+
+                            <div class="form-row">
+
+                                <div class="form-group floating-label col-md-12">
+                                    <label>Username</label>
+                                    <input name='username' type="text" required class="form-control" placeholder="Username">
+                                    {% if form.errors.username %}
+                                        <p style="color: red">{{form.errors.username}}</p>
+                                    {% endif %}
+
+                                </div>
+                                <div class="form-group floating-label col-md-12">
+                                    <label>Email</label>
+                                    <input name='email' type="email" required class="form-control" placeholder="Email">
+                                    {% if form.errors.email %}
+                                        <p style="color: red">{{form.errors.email}}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="form-group floating-label col-md-12">
+                                    <label>Password</label>
+                                    <input name='password1' type="password" required class="form-control " id="password" placeholder="Password">
+                                    {% if form.errors.password1 %}
+                                        <p style="color: red">{{form.errors.password1}}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="form-group floating-label">
+                                <label>Password Again</label>
+                                <input name='password2' type="password" class="form-control" required id="confirm_password" placeholder="Password Again">
+                                {% if form.errors.password2 %}
+                                    <p style="color: red">{{form.errors.password2}}</p>
+                                {% endif %}
+                            </div>
+                            <p class="">
+                                <label class="cstm-switch">
+                                    <input type="checkbox" checked name="option" value="1" class="cstm-switch-input">
+                                    <span class="cstm-switch-indicator "></span>
+                                    <span class="cstm-switch-description">  I agree to the Terms and Privacy. </span>
+                                </label>
+                            </p>
+
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+
+                        </form>
+                        <p class="text-right p-t-10">
+                            <a href="#!" class="text-underline">Already a user?</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-8 d-none d-md-block bg-cover" style="background-image: {% static 'assets/img/auth.svg' %}">
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/vendor/popper/popper.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendor/select2/js/select2.full.min.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'assets/vendor/listjs/listjs.min.js' %}"></script>
+<script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap-notify/bootstrap-notify.min.js' %}"></script>
+<script src="{% static 'assets/js/atmos.min.js' %}"></script>
+<!--page specific scripts for demo-->
+
+<script src="{% static 'assets/vendor/jquery.validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/js/form-validate.js' %}"></script>
+</body>
+</html>

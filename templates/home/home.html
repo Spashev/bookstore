@@ -1,0 +1,440 @@
+{% extends "layout/app.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="row ">
+
+        <div class="col-lg-4  m-b-30 ">
+            <div class="card m-b-30 full-height">
+                <img src="{% static 'assets/img/patterns/header.png' %}" class="rounded-top" width="100%" alt="header">
+                <div class="card-body  bg-gray-900 rounded-bottom ">
+                    <div class="pull-up-sm">
+                        <div class="avatar avatar-lg">
+                            <div class="avatar-title rounded-circle mdi mdi-heart bg-primary"></div>
+                        </div>
+                    </div>
+                    <h1 class="text-white pt-4 fw-300">
+                            <span class="js-greeting">Good Morning</span>,
+                    </h1>
+                    <p class="opacity-75 text-white">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi at atque, beatae debitis distinctio dolorem eligendi eum exer.
+                    </p>
+                    <div>
+                        <a href="#!" class="btn btn-success">View Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12  ">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="card-title m-b-0">Revenue Prediction</h5>
+
+                    <div class="card-controls">
+                        <a href="#" class="js-card-refresh icon"></a>
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
+                                        class="icon mdi  mdi-dots-vertical"></i> </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Action</button>
+                                <button class="dropdown-item" type="button">Another action</button>
+                                <button class="dropdown-item" type="button">Something else here</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body  ">
+                        <div id="chart-01" class=" "></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row ">
+        <div class="col-lg-8 col-md-12  ">
+            <div class="card bg-gray-900 m-b-30">
+                <div class="card-header text-white">
+                    <h5 class="card-title m-b-0">Users Annual Retention Rate </h5>
+
+                    <div class="card-controls">
+                        <a href="#" class="js-card-refresh icon"></a>
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
+                                        class="icon mdi  mdi-dots-vertical"></i> </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Action</button>
+                                <button class="dropdown-item" type="button">Another action</button>
+                                <button class="dropdown-item" type="button">Something else here</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body bg-gray-900 rounded">
+                    <div id="chart-02" class="invert-colors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4  m-b-30 ">
+            <!--widget card begin-->
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="card-title m-b-0">Social Interactions</h5>
+
+                    <div class="card-controls">
+                        <a href="#" class="js-card-refresh icon"></a>
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
+                                        class="icon mdi  mdi-dots-vertical"></i> </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Action</button>
+                                <button class="dropdown-item" type="button">Another action</button>
+                                <button class="dropdown-item" type="button">Something else here</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row p-t-15 ">
+                        <div class="col-sm-6 my-auto ">
+                            <h5 class="m-0">Total Sales <a href="#"
+                                                            class="mdi mdi-information text-muted"></a></h5>
+                        </div>
+
+                    </div>
+                    <div class="row p-t-10">
+                        <div class="col-sm-6 my-auto ">
+                            <h3 class="">$82.99</h3>
+                        </div>
+                        <div class="col-sm-6 my-auto  text-right ">
+                            <h3 class="text-success"><i class="mdi mdi-arrow-up"></i> 2.6%</h3>
+                        </div>
+                    </div>
+
+                    <ul class="list-group m-t-10">
+                        <li class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <span class="d-block"> <i class="mdi mdi-facebook-box"></i> Facebook</span>
+                                </span>
+                            <span>
+                                    <span class="text-success d-block"> +15%  </span>
+                                </span>
+                        </li>
+                        <li class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <span class="d-block"> <i class="mdi mdi-instagram"></i> Instagram</span>
+                                </span>
+                            <span>
+                                    <span class="text-success d-block"> +36%  </span>
+                                </span>
+                        </li>
+                        <li class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <span class="d-block"> <i class="mdi mdi-twitter"></i> Twitter</span>
+                                </span>
+                            <span>
+                                    <span class="text-danger d-block"> -5%  </span>
+                                </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-img">
+                    <div id="chart-03"></div>
+
+                </div>
+            </div>
+            <!--widget card ends-->
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive bg-white shadow rounded">
+
+                <table class="table  table-hover align-td-middle">
+                    <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Workspaces</th>
+                        <th>Team</th>
+                        <th>Active</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            Manager
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title rounded-circle">AB</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle"
+                                            src="assets/img/logos/tinder.jpg" alt="ML">
+                                </div>
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-success rounded-circle">R</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle"
+                                            src="assets/img/logos/mailchimp.jpg" alt="ML">
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title rounded-circle">AB</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-primary rounded-circle">J</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-dark rounded-circle">H</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-success rounded-circle">B</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title rounded-circle">5+</span>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <label class="cstm-switch">
+                                <input type="checkbox" name="option" checked value="1"
+                                        class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success"></span>
+
+                            </label>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn  btn-primary"> View</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Floor Manager
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title rounded-circle bg-success">X</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle"
+                                            src="assets/img/logos/americanexpress.jpg" alt="ML">
+                                </div>
+
+
+                                <div class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle"
+                                            src="assets/img/logos/nytimes.jpg" alt="ML">
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title rounded-circle">R</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-info rounded-circle">CJ</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-warning rounded-circle">H</span>
+                                </div>
+
+
+                            </div>
+                        </td>
+                        <td>
+                            <label class="cstm-switch">
+                                <input type="checkbox" name="option" checked value="1"
+                                        class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success"></span>
+
+                            </label>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn  btn-primary"> View</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Interns
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-danger rounded-circle">RD</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-info rounded-circle">PF</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-success rounded-circle">L</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-danger rounded-circle">V</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-dark rounded-circle">SM</span>
+                                </div>
+
+
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-warning rounded-circle">B</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-success rounded-circle">U</span>
+                                </div>
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-primary rounded-circle">LK</span>
+                                </div>
+
+
+                            </div>
+                        </td>
+                        <td>
+                            <label class="cstm-switch">
+                                <input type="checkbox" name="option" value="1"
+                                        class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success"></span>
+
+                            </label>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn  btn-primary"> View</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Designers
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-warning rounded-circle">B</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-success rounded-circle">U</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-dark rounded-circle">U</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-primary rounded-circle">LK</span>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <span class="text-muted">Not Assigned</span>
+
+                        </td>
+
+                        <td>
+                            <label class="cstm-switch">
+                                <input type="checkbox" disabled="" name="option" value="1"
+                                        class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success"></span>
+
+                            </label>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn  btn-primary"> View</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Developers
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-danger rounded-circle">S</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-secondary rounded-circle">E</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-info rounded-circle">QW</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-primary rounded-circle">V</span>
+                                </div>
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-success rounded-circle">RE</span>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="avatar-group">
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-warning rounded-circle">B</span>
+                                </div>
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-success rounded-circle">U</span>
+                                </div>
+
+                                <div class="avatar avatar-xs">
+                                    <span class="avatar-title bg-soft-primary rounded-circle">LK</span>
+                                </div>
+
+
+                            </div>
+                        </td>
+                        <td>
+                            <label class="cstm-switch">
+                                <input type="checkbox" name="option" value="1"
+                                        class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success"></span>
+
+                            </label>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn  btn-primary"> View</a>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

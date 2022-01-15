@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>{% block title %}Lenger{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png' %}"/>
+    <link rel="icon" href="{% static 'assets/img/logo.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'assets/vendor/pace/pace.css' %}">
+    <script src="{% static 'assets/vendor/pace/pace.min.js' %}"></script>
+    <!--vendors-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/timepicker/bootstrap-timepicker.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/fonts/jost/jost.css' %}">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/materialdesignicons/materialdesignicons.min.css' %}">
+    <!--Bootstrap + atmos Admin CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/atmos.min.css' %}">
+    <!-- Additional library for page -->
+
+    {% block style %}{% endblock %}
+
+</head>
+<body class="sidebar-pinned">
+
+    {% include 'layout/admin.sidebar.html' %}
+
+    <main class="admin-main">
+        <!--site header begins-->
+        <header class="admin-header">
+
+            <a href="#" class="sidebar-toggle" data-toggleclass="sidebar-open" data-target="body"> </a>
+
+            <nav class=" mr-auto my-auto">
+                <ul class="nav align-items-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link  " data-target="#siteSearchModal" data-toggle="modal" href="#">
+                            <i class=" mdi mdi-magnify mdi-24px align-middle"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class=" ml-auto">
+                <ul class="nav align-items-center">
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-24px mdi-bell-outline"></i>
+                                <span class="notification-counter"></span>
+                            </a>
+
+                            <div class="dropdown-menu notification-container dropdown-menu-right">
+                                <div class="d-flex p-all-15 bg-white justify-content-between border-bottom ">
+                                    <a href="#!" class="mdi mdi-18px mdi-settings text-muted"></a>
+                                    <span class="h5 m-0">Notifications</span>
+                                    <a href="#!" class="mdi mdi-18px mdi-notification-clear-all text-muted"></a>
+                                </div>
+                                <div class="notification-events bg-gray-300">
+                                    <div class="text-overline m-b-5">today</div>
+                                    <a href="#" class="d-block m-b-10">
+                                        <div class="card">
+                                            <div class="card-body"> <i class="mdi mdi-circle text-success"></i> All systems operational.</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="d-block m-b-10">
+                                        <div class="card">
+                                            <div class="card-body"> <i class="mdi mdi-upload-multiple "></i> File upload successful.</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="d-block m-b-10">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <i class="mdi mdi-cancel text-danger"></i> Your holiday has been denied
+                                            </div>
+                                        </div>
+                                    </a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#"   role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                            <div class="avatar avatar-sm avatar-online">
+                                <span class="avatar-title rounded-circle bg-dark">V</span>
+
+                            </div>
+                        </a>
+                        <div class="dropdown-menu  dropdown-menu-right"   >
+                            <a class="dropdown-item" href="{% url 'profiless:profile' %}">  Profile
+                            </a>
+                            <a class="dropdown-item" href="#">  Help </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}"> Logout</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </header>
+        <!--site header ends -->
+        <section class="admin-content ">
+            <div class="container py-5">
+                {% block content %}{% endblock %}
+            </div>
+        </section>
+    </main>
+
+    <div class="modal modal-slide-left  fade" id="siteSearchModal" tabindex="-1" role="dialog" aria-labelledby="siteSearchModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-all-0" id="site-search">
+                    <button type="button" class="close light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="form-dark bg-dark text-white p-t-60 p-b-20 bg-dots" >
+                        <h3 class="text-uppercase    text-center  fw-300 "> Search</h3>
+
+                        <div class="container-fluid">
+                            <div class="col-md-10 p-t-10 m-auto">
+                                <input type="search" placeholder="Search Something"
+                                    class=" search form-control form-control-lg">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="bg-dark text-muted container-fluid p-b-10 text-center text-overline">
+                            results
+                        </div>
+                        <div class="list-group list  ">
+                            <div class="list-group-item d-flex  align-items-center">
+                                <div class="m-r-20">
+                                    <div class="avatar avatar-sm ">
+                                        <div class="avatar-title bg-dark rounded"><i class="mdi mdi-24px mdi-file-pdf"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="name">SRS Document</div>
+                                    <div class="text-muted">25.5 Mb</div>
+                                </div>
+
+
+                            </div>
+                            <div class="list-group-item d-flex  align-items-center">
+                                <div class="m-r-20">
+                                    <div class="avatar avatar-sm ">
+                                        <div class="avatar-title bg-dark rounded"><i
+                                                    class="mdi mdi-24px mdi-file-document-box"></i></div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="name">Design Guide.pdf</div>
+                                    <div class="text-muted">9 Mb</div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item d-flex  align-items-center">
+                                <div class="m-r-20">
+                                    <div class="avatar avatar-sm ">
+                                        <div class="avatar avatar-sm  ">
+                                            <div class="avatar-title bg-primary rounded"><i
+                                                        class="mdi mdi-24px mdi-code-braces"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="name">response.json</div>
+                                    <div class="text-muted">15 Kb</div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item d-flex  align-items-center">
+                                <div class="m-r-20">
+                                    <div class="avatar avatar-sm ">
+                                        <div class="avatar avatar-sm ">
+                                            <div class="avatar-title bg-info rounded"><i
+                                                        class="mdi mdi-24px mdi-file-excel"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="name">June Accounts.xls</div>
+                                    <div class="text-muted">6 Mb</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/select2/js/select2.full.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/listjs/listjs.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap-notify/bootstrap-notify.min.js' %}"></script>
+    <script src="{% static 'assets/js/atmos.min.js' %}"></script>
+    <!--page specific scripts for demo-->
+
+    <!--Additional Page includes-->
+    <script src="{% static 'assets/vendor/apexchart/apexcharts.min.js' %}"></script>
+    <!--chart data for current dashboard-->
+    <script src="{% static 'assets/js/dashboard-01.js' %}" type="text/javascript"></script>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+{% load socialaccount %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Book Store</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo.png' %}" />
+    <link rel="icon" href="{% static 'assets/img/logo.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'assets/vendor/pace/pace.css' %}">
+    <script src="{% static 'assets/vendor/pace/pace.min.js' %}"></script>
+    <!--vendors-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/timepicker/bootstrap-timepicker.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/fonts/jost/jost.css' %}">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/materialdesignicons/materialdesignicons.min.css' %}">
+    <!--Bootstrap + atmos Admin CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/atmos.min.css' %}">
+    <!-- Additional library for page -->
+
+</head>
+
+<body class="jumbo-page">
+
+    <main class="admin-main  ">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-4  bg-white">
+                    <div class="row align-items-center m-h-100">
+                        <div class="mx-auto col-md-8">
+                          {% block content %}
+                          {% endblock %}
+                          {% block extra_body %}
+                          {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script type="text/javascript">
+  btn = document.querySelector("form > button");
+  btn.classList.add('btn', 'btn-primary', 'btn-block', 'btn-lg');
+  console.log(btn);
+</script>
+</html>

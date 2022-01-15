@@ -1,0 +1,40 @@
+
+{% extends "account/base.html" %}
+{% load socialaccount %}
+{% load static %}
+{% block content %}
+    <div class="p-b-20 text-center">
+        <p>
+            <img src="{% static 'assets/img/logo.svg' %}" width="80" alt="">
+
+        </p>
+        <p class="admin-brand-content">
+            BookStore
+        </p>
+    </div>
+    <h3 class="text-center p-b-20 fw-400">Login</h3>
+    <form class="needs-validation" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group floating-label col-md-12">
+                <label>Username</label>
+                <input name="username" type="text" required class="form-control" placeholder="Username">
+            </div>
+            <div class="form-group floating-label col-md-12">
+                <label>Password</label>
+                <input name="password" type="password" required class="form-control " placeholder="Password">
+            </div>
+        </div>
+
+        {% if form.errors %}
+            <p class="text-danger">Username or password not correct</p>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
+
+    </form>
+    <p class="text-right p-t-10">
+        <a title="Google" class="text-underline mr-3 socialaccount_provider google" href="{% provider_login_url 'google' %}">Login With Google</a>
+        <a href="#!" class="text-underline">Forgot Password?</a>
+    </p>
+{% endblock %}

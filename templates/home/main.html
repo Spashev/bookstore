@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Книжный интернет-магазин</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo.png' %}"/>
+    <link rel="icon" href="{% static 'assets/img/logo.png' %}" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'assets/vendor/pace/pace.css' %}">
+    <script src="{% static 'assets/vendor/pace/pace.min.js' %}"></script>
+    <!--vendors-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/timepicker/bootstrap-timepicker.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/fonts/jost/jost.css' %}">
+    <!--Material Icons-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/materialdesignicons/materialdesignicons.min.css' %}">
+    <!--Bootstrap + atmos Admin CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/atmos.min.css' %}">
+    <!-- Additional library for page -->
+
+</head>
+<body class="sidebar-pinned">   
+<section class="admin-content">
+        <div class=" bg-dark m-b-30 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 m-auto text-white p-t-40 p-b-90">
+
+                        <h1 class="fw-300 text-center">Книжный магазин
+                        </h1>
+                        <p class="p-t-30 form-dark">
+                            <input name="search" type="search" placeholder="Поиск по названию, автору" class=" form-control form-control-lg">
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container pull-up">
+            <div class="row m-b-90">
+                {% for genre in genres %}
+                    <div class="col-lg-4 col-md-6">
+                        <a href="{{ genre.get_absolute_url }}" class="card shadow-lg guide-item m-b-30  bg-primary">
+                            <div class="card-body text-white" 
+                            style="background-image: url('/static/assets/img/photos/photo9.jpg');
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;">
+                                <h4 class=" p-t-20 ">{{ genre }}</h4>
+                                <p>Смотреть всех</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/vendor/popper/popper.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendor/select2/js/select2.full.min.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'assets/vendor/listjs/listjs.min.js' %}"></script>
+<script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap-notify/bootstrap-notify.min.js' %}"></script>
+<script src="{% static 'assets/js/atmos.min.js' %}"></script>
+<!--page specific scripts for demo-->
+
+</body>
+</html>
